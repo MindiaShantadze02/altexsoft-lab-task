@@ -17,7 +17,12 @@ const Board = () => {
   const { playerOne, playerTwo } = selectedFightersData;
 
   const handleClick = (id, player) => {
-    getFighterInfo(id);
+    getFighterInfo(id).then(res => {
+      setFightersData({
+        ...selectedFightersData,
+        [player]: res.data
+      });
+    });
     setSelectedPlayer(player);
     setSelectedFightersQty(selectedFightersQty + 1);
   };

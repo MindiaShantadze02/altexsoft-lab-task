@@ -52,5 +52,5 @@ export const useArena = () => {
     });
   }, [fighters]);
 
-  return { selectedPair };
+  return { selectedPair, setSelectedPair };
 };
